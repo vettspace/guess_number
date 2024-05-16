@@ -5,7 +5,7 @@ import sys
 
 # Получаем случайное число в диапазоне от 1 до 100.
 number = randint(1, 100)
-sys.stdout.write(f'Угадай число от 1 до 100\n------------------------\n')
+sys.stdout.write('Угадай число от 1 до 100:\n\n')
 
 
 def check_number():

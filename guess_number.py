@@ -1,10 +1,11 @@
 """Импорт функции получения случайных чисел"""
 
 from random import randint
+import sys
 
 # Получаем случайное число в диапазоне от 1 до 100.
 number = randint(1, 100)
-print('Угадай число от 1 до 100')
+sys.stdout.write(f'Угадай число от 1 до 100\n------------------------\n')
 
 
 def check_number():
@@ -15,10 +16,10 @@ def check_number():
     # Если число меньше загаданного...
     if guess < number:
         # ...выводим сообщение.
-        print('Число меньше загаданного.')
+        sys.stdout.write('Число меньше загаданного.\n\n')
     elif guess > number:
         # ...выводим сообщение.
-        print('Число больше загаданного.')
+        sys.stdout.write('Число больше загаданного.\n\n')
     elif guess == number:
         flag = True
 
@@ -32,5 +33,4 @@ while True:
     if check_number():
         break
 
-# ...выводим сообщение.
-print('Отлично! Ты угадал число :)')
+sys.stdout.write('\nОтлично! Ты угадал число :)')

@@ -3,12 +3,8 @@
 from random import randint
 import sys
 
-# Получаем случайное число в диапазоне от 1 до 100.
-number = randint(1, 100)
-sys.stdout.write('Угадай число от 1 до 100:\n\n')
 
-
-def check_number():
+def check_number(number, guess):
     """Проверяет число"""
 
     flag = False
@@ -16,21 +12,30 @@ def check_number():
     # Если число меньше загаданного...
     if guess < number:
         # ...выводим сообщение.
-        sys.stdout.write('Число меньше загаданного.\n\n')
+        sys.stdout.write('Число меньше загаданного.\n')
     elif guess > number:
         # ...выводим сообщение.
-        sys.stdout.write('Число больше загаданного.\n\n')
+        sys.stdout.write('Число больше загаданного.\n')
     elif guess == number:
         flag = True
 
     return flag
 
 
-while True:
-    # Получаем число от пользователя и сохраняем его в переменную.
-    guess = int(input('Твоё число: '))
+def main():
 
-    if check_number():
-        break
+    number = randint(1, 100)
+    sys.stdout.write('Угадай число от 1 до 100:\n\n')
 
-sys.stdout.write('\nОтлично! Ты угадал число :)')
+    while True:
+        # Получаем число от пользователя и сохраняем его в переменную.
+        guess = int(input('Твоё число: '))
+
+        if check_number(number, guess):
+            break
+
+    sys.stdout.write('\nОтлично! Ты угадал число :)')
+
+
+if __name__ == "__main__":
+    main()

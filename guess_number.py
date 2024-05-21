@@ -1,12 +1,10 @@
-"""Импорт функции получения случайных чисел"""
-
+"""Угадай число"""
 from random import randint
 import sys
 
 
 def check_number(number, guess):
     """Проверяет число"""
-
     flag = False
 
     # Если число меньше загаданного...
@@ -23,12 +21,13 @@ def check_number(number, guess):
 
 
 def main():
+    """Основная функция"""
 
     number = randint(1, 100)
     sys.stdout.write('Угадай число от 1 до 100:\n\n')
 
     while True:
-        # Получаем число от пользователя и сохраняем его в переменную.
+        # Получаем число от пользователя
         guess = int(input('Твоё число: '))
 
         if check_number(number, guess):

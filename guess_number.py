@@ -33,7 +33,7 @@ def main():
         if check_number(number, guess):
             break
 
-    sys.stdout.write('\nОтлично! Ты угадал число :)')
+    sys.stdout.write('\nОтлично! Ты угадал число ⭐️')
 
 
 if __name__ == "__main__":
